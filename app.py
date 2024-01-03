@@ -4,6 +4,8 @@ import time
 import http.client, urllib
 from datetime import datetime
 
+count = 0
+
 def check_website(url, keyword, not_in_key):
     try:
         # Send a GET request to the website
@@ -27,22 +29,25 @@ def check_website(url, keyword, not_in_key):
         notify(keyword="!Eexception!", url=url)
 
 def notify(keyword, url):
-    print()
-    conn = http.client.HTTPSConnection("api.pushover.net:443")
-    conn.request("POST", "/1/messages.json",
-    urllib.parse.urlencode({
-        "token": "afy2w5389dvunczpv5eruedztxaa3v",
-        "user": "u78zwq6gfm5pvz6hxgvr1819vvno4k",
-        "message": f"UB part time job {keyword} at time {datetime.now} ",
-        "priority": 1,
-        "title": "UB Dining",
-        "url": url,
-    }), { "Content-type": "application/x-www-form-urlencoded" })
-    conn.getresponse()
+    global count
+    if count < 3:
+        count += 1
+        print('Opened at ', datetime.now())
+        conn = http.client.HTTPSConnection("api.pushover.net:443")
+        conn.request("POST", "/1/messages.json",
+        urllib.parse.urlencode({
+            "token": "afy2w5389dvunczpv5eruedztxaa3v",
+            "user": "u78zwq6gfm5pvz6hxgvr1819vvno4k",
+            "message": f"UB part time job {keyword} at time {datetime.now()} ",
+            "priority": 1,
+            "title": "UB Dining",
+            "url": url,
+        }), { "Content-type": "application/x-www-form-urlencoded" })
+        conn.getresponse()
 
 if __name__ == "__main__":
     website_url = "https://ubdining.com/jobs/student-jobs"
-    keyword_to_monitor = "closed"
+    keyword_to_monitor = "opened"
     not_in_key = "opened"
     
     while True:
