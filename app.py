@@ -36,8 +36,8 @@ def notify(keyword, url):
         conn = http.client.HTTPSConnection("api.pushover.net:443")
         conn.request("POST", "/1/messages.json",
         urllib.parse.urlencode({
-            "token": "afy2w5389dvunczpv5eruedztxaa3v",
-            "user": "u78zwq6gfm5pvz6hxgvr1819vvno4k",
+            "token": "<Your token>",
+            "user": "<Your user>",
             "message": f"UB part time job {keyword} at time {datetime.now()} ",
             "priority": 1,
             "title": "UB Dining",
