@@ -1,0 +1,31 @@
+  1  ls
+    2  cwd
+    3  pwd
+    4  scp -i "ub_dining_notifier.pem" /home/ubuntu/Desktop/pyn/part_time_job_notifier ubuntu@ec2-3-90-219-115.compute-1.amazonaws.com:/home/ubuntu/ub_dining
+    5  scp -i "ub_dining_notifier.pem" /home/ubuntu/Desktop/pyn/part_time_job_notifier/app.py ubuntu@ec2-3-90-219-115.compute-1.amazonaws.com:/home/ubuntu/ub_dining
+    6  scp -i "ub_dining_notifier.pem" /home/ubuntu/Desktop/pyn/part_time_job_notifier.zip ubuntu@ec2-3-90-219-115.compute-1.amazonaws.com:/home/ubuntu/ub_dining
+    7  sudo scp -i "ub_dining_notifier.pem" /home/ubuntu/Desktop/pyn/part_time_job_notifier.zip ubuntu@ec2-3-90-219-115.compute-1.amazonaws.com:/home/ubuntu/ub_dining
+    8  su scp -i "ub_dining_notifier.pem" /home/ubuntu/Desktop/pyn/part_time_job_notifier.zip ubuntu@ec2-3-90-219-115.compute-1.amazonaws.com:/home/ubuntu/ub_dining
+    9  su scp -i "ub_dining_notifier.pem" /home/ubuntu/Desktop/pyn/part_time_job_notifier.zip ubuntu@ec2-3-90-219-115.compute-1.amazonaws.com:/home/ubuntu/
+   10  sudo scp -i "ub_dining_notifier.pem" /home/ubuntu/Desktop/pyn/part_time_job_notifier.zip ubuntu@ec2-3-90-219-115.compute-1.amazonaws.com:/home/ubuntu/
+   11  scp -i "ub_dining_notifier.pem" /home/ubuntu/Desktop/pyn/part_time_job_notifier.zip ubuntu@ec2-3-90-219-115.compute-1.amazonaws.com:/home/ubuntu/
+   12  exit
+   13  kill -9 9444
+   14  kill -9 9443
+   15  htop
+   16  cd part_time_job_notifier/
+   17  nano app.py 
+   18  nohup python3 app.py > output.log 2&1 &
+   19  kill -9 9589
+   20  kill -9 9590
+   21  nano app.py 
+   22  nohup python3 app.py > output.log 2&1 &
+   23  htop
+   24  history
+   25 ssh -i "ub_dining_notifier.pem" ubuntu@ec2-3-90-219-115.compute-1.amazonaws.com
+   26 CORRECTED COMMAND ---> nohup python3 -u app.py > output.out 2>&1 &
+
+
+
+---------------------------------------------------------------------------
+
